@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/layout_wrapper"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp"
+    android:paddingStart="@dimen/_17sdp"
+    android:paddingEnd="@dimen/_17sdp"
     tools:context=".view.LoginActivity">
 
     <EditText
@@ -13,27 +14,33 @@
         android:id="@+id/edt_username"
         android:layout_width="match_parent"
         android:hint="@string/username"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/_40sdp"
         android:inputType="text"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:background="@drawable/background_edit_text"/>
 
     <EditText
         android:layout_below="@+id/edt_username"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
         android:hint="@string/password"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/_40sdp"
         android:inputType="textPassword"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:background="@drawable/background_edit_text"/>
 
     <Button
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/edt_password"
         android:id="@+id/btn_login"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_40sdp"
         android:text="@string/login"/>
 
 </RelativeLayout>

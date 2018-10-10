@@ -1,6 +1,6 @@
 package com.android.haule.android_viper_example.interactor;
 
-import com.android.haule.android_viper_example.LoginContracts;
+import com.android.haule.android_viper_example.contracts.LoginContracts;
 import com.android.haule.android_viper_example.entity.User;
 
 /**

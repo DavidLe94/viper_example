@@ -3,7 +3,7 @@ package com.android.haule.android_viper_example.router;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import com.android.haule.android_viper_example.LoginContracts;
+import com.android.haule.android_viper_example.contracts.LoginContracts;
 import com.android.haule.android_viper_example.entity.User;
 import com.android.haule.android_viper_example.view.MainActivity;
 

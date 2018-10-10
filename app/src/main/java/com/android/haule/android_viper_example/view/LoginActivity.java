@@ -1,28 +1,35 @@
 package com.android.haule.android_viper_example.view;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
-import com.android.haule.android_viper_example.LoginContracts;
+import com.android.haule.android_viper_example.contracts.LoginContracts;
 import com.android.haule.android_viper_example.R;
 import com.android.haule.android_viper_example.presenter.LoginPresenter;
+import com.android.haule.android_viper_example.view.base.BaseActivity;
+import butterknife.BindView;
+import butterknife.OnClick;
 
-public class LoginActivity extends Activity
-        implements LoginContracts.View, View.OnClickListener {
-    private EditText edtUsername, edtPassword;
-    private Button btnLogin;
+public class LoginActivity extends BaseActivity
+        implements LoginContracts.View {
+    @BindView(R.id.edt_username) EditText edtUsername;
+    @BindView(R.id.edt_password) EditText edtPassword;
+    @BindView(R.id.layout_wrapper) RelativeLayout loWrapper;
+
     private LoginContracts.Presenter presenter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        initView();
+        hiddenKeySoft( this, loWrapper);
         presenter = new LoginPresenter(this);
 
+    }
+
+    @Override
+    protected int getResourceLayoutId() {
+        return R.layout.activity_login;
     }
 
     @Override
@@ -30,30 +37,17 @@ public class LoginActivity extends Activity
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btn_login:
-                onLoginButtonClicked();
-                break;
-        }
+    @OnClick(R.id.btn_login)
+    public void loginButtonClicked(){
+        onLoginButtonClicked();
     }
+
 
     @Override
     protected void onDestroy() {
         presenter.onDestroy();
         presenter = null;
         super.onDestroy();
-    }
-
-    private void initView() {
-        //init view
-        edtUsername = findViewById(R.id.edt_username);
-        edtPassword = findViewById(R.id.edt_password);
-        btnLogin = findViewById(R.id.btn_login);
-
-        //set event
-        btnLogin.setOnClickListener(this);
     }
 
     private void onLoginButtonClicked(){

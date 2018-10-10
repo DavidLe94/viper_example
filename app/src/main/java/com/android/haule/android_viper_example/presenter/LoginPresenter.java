@@ -2,7 +2,7 @@ package com.android.haule.android_viper_example.presenter;
 
 import android.content.Context;
 
-import com.android.haule.android_viper_example.LoginContracts;
+import com.android.haule.android_viper_example.contracts.LoginContracts;
 import com.android.haule.android_viper_example.entity.User;
 import com.android.haule.android_viper_example.interactor.LoginInteractor;
 import com.android.haule.android_viper_example.router.LoginRouter;

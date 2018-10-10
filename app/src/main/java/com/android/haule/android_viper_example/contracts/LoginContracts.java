@@ -1,4 +1,4 @@
-package com.android.haule.android_viper_example;
+package com.android.haule.android_viper_example.contracts;
 
 import com.android.haule.android_viper_example.entity.User;
 
