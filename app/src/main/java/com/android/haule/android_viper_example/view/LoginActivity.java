@@ -39,18 +39,13 @@ public class LoginActivity extends BaseActivity
 
     @OnClick(R.id.btn_login)
     public void loginButtonClicked(){
-        onLoginButtonClicked();
+        presenter.onLoginButtonPressed(edtUsername.getText().toString(), edtPassword.getText().toString());
     }
 
 
     @Override
     protected void onDestroy() {
-        presenter.onDestroy();
         presenter = null;
         super.onDestroy();
-    }
-
-    private void onLoginButtonClicked(){
-        presenter.onLoginButtonPressed(edtUsername.getText().toString(), edtPassword.getText().toString());
     }
 }

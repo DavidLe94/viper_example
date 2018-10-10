@@ -14,11 +14,6 @@ public class LoginInteractor implements LoginContracts.Interactor{
     }
 
     @Override
-    public void unregister() {
-        output = null;
-    }
-
-    @Override
     public void login(String username, String password) {
         User user = new User();
         user.setUsername("Hau le");

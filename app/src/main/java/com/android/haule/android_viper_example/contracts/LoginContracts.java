@@ -11,12 +11,10 @@ public interface LoginContracts {
     }
 
     interface Presenter{
-        void onDestroy();
         void onLoginButtonPressed(String username, String password);
     }
 
     interface Interactor{
-        void unregister();
         void login(String username, String password);
     }
 

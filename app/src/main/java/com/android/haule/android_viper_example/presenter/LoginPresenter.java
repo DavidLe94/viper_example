@@ -21,13 +21,6 @@ public class LoginPresenter implements LoginContracts.Presenter, LoginContracts.
     }
 
     @Override
-    public void onDestroy() {
-        view = null;
-        interactor.unregister();
-        interactor = null;
-    }
-
-    @Override
     public void onLoginButtonPressed(String username, String password) {
         interactor.login(username, password);
     }
